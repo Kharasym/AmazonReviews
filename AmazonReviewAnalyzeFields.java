@@ -110,7 +110,7 @@ public class AmazonReviewAnalyzeFields extends Configured implements Tool {
 				
 				// Now we parse the string into a JsonElement so we can dig into it
 				JsonElement jsonTree = parser.parse(jsonString);
-                
+                JsonObject jsonObject = jsonTree.getAsJsonObject();
                 String verified = jsonObject.get("verified").getAsString();
                 // context.write(new Text(verified),one);
                 SimpleDateFormat format = new SimpleDateFormat("mm dd, yyyy");
