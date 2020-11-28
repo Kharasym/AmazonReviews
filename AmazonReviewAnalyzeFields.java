@@ -45,11 +45,11 @@ public class AmazonReviewAnalyzeFields extends Configured implements Tool {
 		System.exit(res);
 	}
 
-	//public int run(String[] args) throws Exception {
-	//	if (args.length != 1) {
-	//		System.err.println("Need 1 argument (hdfs output path), got: " + args.length);
-	//		return -1;
-	//	}
+	public int run(String[] args) throws Exception {
+		if (args.length != 1) {
+			System.err.println("Need 1 argument (hdfs output path), got: " + args.length);
+			return -1;
+		}
 
 		// Now we create and configure a map-reduce "job"     
 		Job job = Job.getInstance(getConf(), "AmazonReviewAnalyzeFields");
